@@ -16,5 +16,11 @@ Installs SQLite for storing data.
 
 ``` docker run --name mytinytodo -p 80:80 -p 443:443 -d mytinytodo ```
 
+Load http://your.ip.here/ to complete setup.
+
+After setup is complete:
+
+``` docker exec mytinytodo rm /var/www/html/setup.php ```
+
 ## Todo
 * Put SQLite database on volume
