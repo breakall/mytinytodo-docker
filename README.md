@@ -12,6 +12,8 @@ Installs SQLite for storing data.
 
 ## Instructions
 
+``` git clone https://github.com/breakall/mytinytodo-docker.git ```
+
 ``` docker build . --tag=mytinytodo ```
 
 ``` docker run --name mytinytodo -p 80:80 -p 443:443 -d mytinytodo ```
