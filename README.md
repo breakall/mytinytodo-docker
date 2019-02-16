@@ -1,7 +1,7 @@
 # mytinytodo-docker
-Docker build for mytinytodo 1.4.3 (http://www.mytinytodo.net/)
+Docker build for [mytinytodo 1.4.3](http://www.mytinytodo.net/)
 
-Based on nimmis/apache-php7 image
+Based on the [nimmis/apache-php7](https://hub.docker.com/r/nimmis/apache-php7/) image
 
 Installs SQLite for storing data.
 
