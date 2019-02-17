@@ -26,3 +26,4 @@ After setup is complete:
 
 ## Todo
 * Put SQLite database on volume
+* Script out database setup
