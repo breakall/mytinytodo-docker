@@ -26,7 +26,7 @@ $config['lang'] = "en";
 
 # Specify password here to protect your tasks from modification,
 #  or leave empty that everyone could read/write todolist
-$config['password'] = "";
+$config['password'] = "asdfasdf";
 
 # To disable smart syntax uncomment the line below
 #$config['smartsyntax'] = 0;
@@ -44,7 +44,7 @@ $config['duedateformat'] = 1;
 $config['firstdayofweek'] = 1;
 
 # select session handling mechanism: files or default (php default)
-$config['session'] = 'files';
+$config['session'] = 'default';
 
 # Date/time formats
 $config['clock'] = 24;
