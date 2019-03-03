@@ -3,9 +3,9 @@ Docker build for [mytinytodo 1.4.3](http://www.mytinytodo.net/).
 
 Uses stock 1.4.3 + one change to make the checkbox bigger on mobile.
 
-Based on the [nimmis/apache-php7](https://hub.docker.com/r/nimmis/apache-php7/) image. Resulting image is about 800 MB but uses >50 MB RAM in use.
+Based on the [ulsmith/alpine-apache-php7](https://hub.docker.com/r/ulsmith/alpine-apache-php7/) image. Resulting image is about 150 MB, and uses 30 MB RAM in use.
 
-Installs SQLite for storing data.
+Uses SQLite for storing data.
 
 
 
@@ -24,7 +24,7 @@ Load http://your.ip.here/ to complete setup.
 
 After setup is complete:
 
-``` docker exec mytinytodo rm /var/www/html/setup.php ```
+``` docker exec mytinytodo rm /app/public/setup.php ```
 
 ## Todo
 * Put SQLite database on volume
