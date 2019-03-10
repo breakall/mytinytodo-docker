@@ -18,7 +18,7 @@ Note: On Windows hosts add ` --config core.autocrlf=input ` to the above git com
 
 ``` docker build . --tag=mytinytodo ```
 
-``` docker run --name mytinytodo -p 80:80 -p 443:443 -d --restart unless-stopped mytinytodo ```
+``` docker run --name mytinytodo -v db:/app/public/db -p 80:80 -p 443:443 -d --restart unless-stopped mytinytodo ```
 
 Load http://your.ip.here/ to complete setup.
 
@@ -27,5 +27,4 @@ After setup is complete:
 ``` docker exec mytinytodo rm /app/public/setup.php ```
 
 ## Todo
-* Put SQLite database on volume
 * Script out database setup
