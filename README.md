@@ -18,7 +18,7 @@ Note: On Windows hosts add ` --config core.autocrlf=input ` to the above git com
 
 ``` docker build . --tag=mytinytodo ```
 
-``` docker run --name mytinytodo -p 80:80 -p 443:443 -d mytinytodo ```
+``` docker run --name mytinytodo -p 80:80 -p 443:443 -d --restart unless-stopped mytinytodo ```
 
 Load http://your.ip.here/ to complete setup.
 
