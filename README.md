@@ -1,7 +1,7 @@
 # mytinytodo-docker
-Docker build for [mytinytodo 1.4.3](http://www.mytinytodo.net/).
+Docker build for [mytinytodo 1.5](http://www.mytinytodo.net/).
 
-Uses stock 1.4.3 + one change to make the checkbox bigger on mobile.
+Uses stock 1.5 + one change to make the checkbox bigger on mobile.
 
 Based on the [ulsmith/alpine-apache-php7](https://hub.docker.com/r/ulsmith/alpine-apache-php7/) image. Resulting image is about 150 MB, and uses 30 MB RAM in use.
 

@@ -1,11 +1,5 @@
 <?php
 
-/*
-	This file is part of myTinyTodo.
-	(C) Copyright 2009-2010 Max Pozdeev <maxpozdeev@gmail.com>
-	Licensed under the GNU GPL v2 license. See file COPYRIGHT for details.
-*/
-
 function htmlarray($a, $exclude=null)
 {
 	htmlarray_ref($a, $exclude);
@@ -62,7 +56,7 @@ function _get($param,$defvalue = '')
 	else {
 		return $_GET[$param];
 	}
-} 
+}
 
 class Config
 {
@@ -88,8 +82,10 @@ class Config
 		'dateformat' => array('default'=>'j M Y', 'type'=>'s'),
 		'dateformat2' => array('default'=>'n/j/y', 'type'=>'s'),
 		'dateformatshort' => array('default'=>'j M', 'type'=>'s'),
+		'mobiletemplate' => array('default'=>'mobile', 'type'=>'s'),
 		'template' => array('default'=>'default', 'type'=>'s'),
 		'showdate' => array('default'=>0, 'type'=>'i'),
+		'version' => array('default'=>'v1.5.0', 'type'=>'s'),
 	);
 
 	public static $config;

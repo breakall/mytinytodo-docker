@@ -3,7 +3,7 @@
 /*
 	This file is part of myTinyTodo.
 	(C) Copyright 2009-2011 Max Pozdeev <maxpozdeev@gmail.com>
-	Licensed under the GNU GPL v2 license. See file COPYRIGHT for details.
+	Licensed under the GNU GPL v3 license. See file COPYRIGHT for details.
 */
 
 set_exception_handler('myExceptionHandler');
@@ -45,8 +45,8 @@ else
 }
 
 $lastVer = '1.4';
-echo '<html><head><meta name="robots" content="noindex,nofollow"><title>myTinyTodo 1.4.3 Setup</title></head><body>'; 
-echo "<big><b>myTinyTodo 1.4.3 Setup</b></big><br><br>";
+echo '<html><head><meta name="robots" content="noindex,nofollow"><title>myTinyTodo '.Config::get('version').' Setup</title></head><body>';
+echo "<big><b>myTinyTodo ".Config::get('version')." Setup</b></big><br><br>";
 
 # determine current installed version
 $ver = get_ver($db, $dbtype);
