@@ -2,8 +2,8 @@
 
 /*
 	This file is part of myTinyTodo.
-	(C) Copyright 2009-2011 Max Pozdeev <maxpozdeev@gmail.com>
-	Licensed under the GNU GPL v2 license. See file COPYRIGHT for details.
+	(C) Copyright 2009-2010 Max Pozdeev <maxpozdeev@gmail.com>
+	Licensed under the GNU GPL v3 license. See file COPYRIGHT for details.
 */
 
 require_once('./init.php');
@@ -22,14 +22,6 @@ if(isset($_POST['save']))
 	$langs = getLangs();
 	Config::$params['lang']['options'] = array_keys($langs);
 	Config::set('lang', _post('lang'));
-	
-	// in Demo mode we can set only language by cookies
-	if(defined('MTTDEMO')) {
-		setcookie('lang', Config::get('lang'), 0, url_dir(Config::get('url')=='' ? $_SERVER['REQUEST_URI'] : Config::get('url')));
-		$t['saved'] = 1;
-		jsonExit($t);
-	}
-	
 	if(isset($_POST['password']) && $_POST['password'] != '') Config::set('password', $_POST['password']);
 	elseif(!_post('allowpassword')) Config::set('password', '');
 	Config::set('smartsyntax', (int)_post('smartsyntax'));
@@ -174,7 +166,8 @@ header('Content-type:text/html; charset=utf-8');
 <tr>
 <th><?php _e('set_smartsyntax');?>:<br/><span class="descr"><?php _e('set_smartsyntax_descr');?></span></th>
 <td>
- <label><input type="radio" name="smartsyntax" value="1" <?php if(_c('smartsyntax')) echo 'checked="checked"'; ?> /><?php _e('set_enabled');?></label> <br/>
+ <label><input type="radio" name="smartsyntax" value="1" <?php if(_c('smartsyntax')==1) echo 'checked="checked"'; ?> /><?php _e('set_enabled');?></label> <br/>
+ <label><input type="radio" name="smartsyntax" value="2" <?php if(_c('smartsyntax')==2) echo 'checked="checked"'; ?> /><?php _e('set_smartsyntax_alternative');?></label> <br/>
  <label><input type="radio" name="smartsyntax" value="0" <?php if(!_c('smartsyntax')) echo 'checked="checked"'; ?> /><?php _e('set_disabled');?></label>
 </td></tr>
 
@@ -222,7 +215,8 @@ header('Content-type:text/html; charset=utf-8');
  <?php echo selectOptions(array('Y-m-d'=>'yyyy-mm-dd ('.date('Y-m-d').')',
        'n/j/y'=>'m/d/yy ('.date('n/j/y').')',
        'd.m.y'=>'dd.mm.yy ('.date('d.m.y').')',
-       'd/m/y'=>'dd/mm/yy ('.date('d/m/y').')', 0=>__('set_custom')), _c('dateformat2'), 0); ?>
+       'd/m/y'=>'dd/mm/yy ('.date('d/m/y').')',
+       'd/m/Y'=>'dd/mm/yyyy ('.date('d/m/Y').')', 0=>__('set_custom')), _c('dateformat2'), 0); ?>
  </select>
 </td></tr>
 
